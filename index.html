@@ -27,6 +27,7 @@
 
         .logo {
             width: 200px;
+            margin-left: -40px;
         }
 
         .text {
@@ -43,30 +44,28 @@
             gap: 5px; 
         }
 
-        .download-button, .platform-button {
+        .download-button, .platform-button, .extra-button {
             background: none;
             border: none;
             cursor: pointer;
         }
 
+        .download-button img, .extra-button img, .platform-button img {
+            transition: transform 0.2s;
+        }
+
+        .download-button img:hover, .platform-button img:hover, .extra-button img:hover {
+            transform: scale(0.875); /* Slightly scale down on hover */
+        }
+
         .download-button img {
             width: 200px;
-            transition: transform 0.2s;
         }
 
-        .platform-button img {
+        .platform-button img, .extra-button img {
             width: 40px;
             height: 40px;
-            transition: transform 0.2s;
             margin-top: -2px; 
-        }
-
-        .download-button img:hover {
-            transform: scale(0.975); 
-        }
-
-        .platform-button img:hover {
-            transform: scale(0.875); 
         }
 
         .small-text {
@@ -74,6 +73,17 @@
             font-size: 14px;
             color: lightgray;
             cursor: pointer;
+            /* Смещение текста "Почему мы?" на 4 пикселя влево */
+            margin-left: -45px; /* <- Здесь */
+        }
+
+        .extra-buttons-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+            /* Смещение кнопок "Donationalerts" и "Discord" на 4 пикселя влево */
+            margin-left: -45px; /* <- Здесь */
         }
 
         .overlay {
@@ -119,6 +129,15 @@
                 </button>
             </div>
             <div class="small-text" onclick="showImage()">Почему мы? >></div>
+            
+            <div class="extra-buttons-row">
+                <button class="extra-button" onclick="window.location.href='https://url.com'">
+                    <img src="da.png" alt="Donationalerts">
+                </button>
+                <button class="extra-button" onclick="window.location.href='https://url.com'">
+                    <img src="ds.png" alt="Discord">
+                </button>
+            </div>
         </div>
     </div>
 
